@@ -1,0 +1,29 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "org.example";
+option java_outer_classname = "JMessengerProto";
+option objc_class_prefix = "HLW";
+
+service JMessengerService {
+
+  rpc sendMessage ( Message) returns (Confirmation) {}
+  rpc receiveMessage (Inbox) returns ( Message){}
+}
+
+message Message {
+  string sender = 1;
+  string text = 2;
+  string receiver = 3;
+}
+message User {
+  string username = 1;
+}
+message Inbox {
+  string sender = 1;
+  string receiver = 2;
+}
+
+message Confirmation
+{
+  bool success=1;
+}
