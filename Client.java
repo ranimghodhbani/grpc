@@ -63,11 +63,11 @@ public class Client {
         });
     }
     public static void main(String[] args) throws Exception {
-        Client client = new Client("localhost", 50051);
+        Client client = new Client("localhost", 50055);
         try {
-            client.send("mariem","hi","olfa");
-            System.out.println("waiting for messages");
-            client.receive("olfa","ranim");
+            client.send("Alice","Bonjour, Bob!","Bob");
+            System.out.println("Messages sent from Alice to Bob:");
+            client.receive("Bob","Alice");
         } finally {
             client.shutdown();
         }
