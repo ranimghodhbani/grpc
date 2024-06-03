@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Client2 {
     private final ManagedChannel channel;
-    private final  JMessengerServiceGrpc.JMessengerServiceBlockingStub blockingStub;
-    private final JMessengerServiceGrpc.JMessengerServiceStub asyncStub;
+    private final  MessengerServiceGrpc.MessengerServiceBlockingStub blockingStub;
+    private final MessengerServiceGrpc.MessengerServiceStub asyncStub;
 
     public Client2(String host, int port) {
         this(ManagedChannelBuilder.forAddress(host, port)
@@ -21,8 +21,8 @@ public class Client2 {
 
     Client2(ManagedChannel channel) {
         this.channel = channel;
-        blockingStub = JMessengerServiceGrpc.newBlockingStub(channel);
-        asyncStub = JMessengerServiceGrpc.newStub(channel);
+        blockingStub = MessengerServiceGrpc.newBlockingStub(channel);
+        asyncStub = MessengerServiceGrpc.newStub(channel);
     }
 
     public void shutdown() throws InterruptedException {
