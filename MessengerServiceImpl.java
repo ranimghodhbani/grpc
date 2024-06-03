@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class JMessengerServiceImpl extends JMessengerServiceGrpc.JMessengerServiceImplBase {
+public class MessengerServiceImpl extends MessengerServiceGrpc.MessengerServiceImplBase {
     Map<String, Map<String, List<Message>>> userMessages = new ConcurrentHashMap<>();
 
     @Override
